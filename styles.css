@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffe7f0;
+    font-family: 'Helvetica Neue', sans-serif;
+    position: relative;
+}
+.container img {
+    max-width: 80%; /* Ajusta el porcentaje según prefieras */
+    height: auto;
+}
+/* Estilos para los corazones */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart-border {
+    width: 15vw; /* Unidad de medida relativa */
+    height: 15vw; /* Unidad de medida relativa */
+    position: absolute;
+    background: url('corazon.png') no-repeat center;
+    background-size: contain;
+    animation: floatHearts 8s linear infinite;
+    opacity: 0.7;
+}
+
+.top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .heart-border {
+        width: 10vw; /* Ajusta el tamaño para pantallas pequeñas */
+        height: 10vw; /* Ajusta el tamaño para pantallas pequeñas */
+    }
+}
